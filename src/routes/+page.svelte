@@ -1,7 +1,18 @@
 <script lang="ts">
-	let messageByClipboard: string = $state('');
+	import emoji from 'emoji-datasource';
+	const emojiRegex = /:([a-z0-9_+]+):/g;
+
+    let messageByClipboard: string = $state('');
 	let messageInInputArea: string = $state('');
-	let messageInOutputArea: string = $derived(messageInInputArea);
+	let messageInOutputArea: string = $derived(
+		messageInInputArea.replace(emojiRegex, (match, p1) => {
+			const emojiData = emoji.find((e) => e.short_name === p1);
+			if (emojiData) {
+				return String.fromCodePoint(parseInt(emojiData.unified, 16));
+			}
+			return match; // 見つからない場合は :emoji: のまま返す
+		})
+	);
 
 	// function handleButtonClick(event: { currentTarget: HTMLButtonElement }) {
 	// 	console.log('foo');
