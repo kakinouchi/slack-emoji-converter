@@ -14,7 +14,7 @@
 </svelte:head>
 
 <div
-	class="group/design-root relative flex size-full min-h-screen flex-col justify-between overflow-x-hidden bg-white"
+	class="group/design-root relative flex size-full min-h-screen flex-col gap-6 overflow-x-hidden bg-white"
 	style="font-family: Plus Jakarta Sans, Noto Sans, sans-serif;"
 >
 	<div>
@@ -25,12 +25,25 @@
 				Emoji Converter
 			</h2>
 		</div>
-		<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+	</div>
+
+	<div class="flex justify-center gap-6">
+		<div class="flex w-1/3 flex-wrap items-end gap-4 px-4 py-3">
 			<label class="flex min-w-40 flex-1 flex-col">
 				<p class="pb-2 text-base font-medium leading-normal text-[#111518]">Input</p>
 				<textarea
 					placeholder="Type your message here"
-					class="form-input flex min-h-36 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl border border-[#dbe1e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111518] placeholder:text-[#60768a] focus:border-[#dbe1e6] focus:outline-0 focus:ring-0"
+					class="form-input flex min-h-96 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl border border-[#dbe1e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111518] placeholder:text-[#60768a] focus:border-[#dbe1e6] focus:outline-0 focus:ring-0"
+				></textarea>
+			</label>
+		</div>
+
+		<div class="flex w-1/3 flex-wrap items-end gap-4 px-4 py-3">
+			<label class="flex min-w-40 flex-1 flex-col">
+				<p class="pb-2 text-base font-medium leading-normal text-[#111518]">Output</p>
+				<textarea
+					placeholder="Converted emojis will appear here"
+					class="form-input flex min-h-96 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl border border-[#dbe1e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111518] placeholder:text-[#60768a] focus:border-[#dbe1e6] focus:outline-0 focus:ring-0"
 				></textarea>
 			</label>
 		</div>
@@ -50,15 +63,6 @@
 					<span class="truncate">Clear</span>
 				</button>
 			</div>
-		</div>
-		<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-			<label class="flex min-w-40 flex-1 flex-col">
-				<p class="pb-2 text-base font-medium leading-normal text-[#111518]">Output</p>
-				<textarea
-					placeholder="Converted emojis will appear here"
-					class="form-input flex min-h-36 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl border border-[#dbe1e6] bg-white p-[15px] text-base font-normal leading-normal text-[#111518] placeholder:text-[#60768a] focus:border-[#dbe1e6] focus:outline-0 focus:ring-0"
-				></textarea>
-			</label>
 		</div>
 		<footer class="flex flex-col gap-6 px-5 py-10 text-center @container">
 			<p class="text-base font-normal leading-normal text-[#60768a]">
